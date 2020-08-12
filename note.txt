@@ -1,0 +1,15 @@
+Items Manage
+------------
+-create resource route//web.php
+-create controller( --resource)
+-show route list(route:list)
+-create blade(4 for GET methods)
+-call specified view from method(ItemController)
+///////////////////////////////////////
+-use store method(form action)
+	-dd()
+	-validation
+	-if include image, upload
+	-data insert
+	-redirect->(index)
+-look at the database
