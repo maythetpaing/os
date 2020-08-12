@@ -1,7 +1,8 @@
 Items Manage
 ------------
 -create resource route//web.php
--create controller( --resource)
+-create controller( --resource)  //app/http/controller
+-create view(views/backend/)
 -show route list(route:list)
 -create blade(4 for GET methods)
 -call specified view from method(ItemController)
