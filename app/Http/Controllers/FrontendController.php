@@ -20,7 +20,9 @@ class FrontendController extends Controller
     	return view('frontend.item');
 	}
 	public function detail($id){
-    	return view('frontend.detail');
+        $items=Item::find($id);
+
+    	return view('frontend.detail',compact('items'));
 	}
 	public function checkout($value=''){
     	return view('frontend.checkout');

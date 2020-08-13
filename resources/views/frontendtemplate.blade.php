@@ -15,6 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="{{asset('frontend/css/shop-homepage.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -44,7 +45,11 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('checkoutpage')}}">Cart</a>
+            <i class="fas fa-shopping-cart"></i>
+            <a class="nav-link" href="{{route('checkoutpage')}}">
+              Checkout
+            </a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('profilepage')}}">Mg Mg</a>
@@ -91,6 +96,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('frontend/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 
 </body>
 
