@@ -143,6 +143,7 @@ class ItemController extends Controller
          $imageName=time().'.'.$request->photo->extension();
         $request->photo->move(public_path('backend/itemimg'),$imageName);
         $myfile='backend/itemimg/'.$imageName;
+        unlink($request->oldphoto);
     }
         else{
             $myfile=$request->oldphoto;
