@@ -12,6 +12,9 @@
 			<h5>Product Code:{{$item->codeno}}</h5><hr>
 			<h5>Product Price:{{$item->price}}</h5><hr>
 			<h5>Description:{{$item->description}}</h5><hr>
+			<h5>Brand:{{$item->brand->name}}</h5><hr>
+			<h5>Subcategory:{{$item->subcategory->name}}</h5>
+
 			
 		</div>
 		

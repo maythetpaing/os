@@ -14,3 +14,22 @@ Items Manage
 	-data insert
 	-redirect->(index)
 -look at the database
+//////////////////
+13-8-20
+------
+-list
+-edit
+-delete
+-validation error
+-delete img
+
+
+UI
+----
+-item page
+-item detail page
+-checkout page
+-profile page
+-login
+-rigister
+
