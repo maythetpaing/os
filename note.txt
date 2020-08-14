@@ -26,10 +26,21 @@ Items Manage
 
 UI
 ----
--item page
+-item page(data binding)
 -item detail page
 -checkout page
--profile page
--login
--rigister
-
+-profile page(link/retrieve)
+14-8-20
+--------------------------
+Frontend
+-profile page(link/retrieve)
+-item page(data binding)
+-auth(multi role)
+////////////////////
+Backend
+////////////
+-Order Retrieve(Ordercontroller/index method)
+-(view/backend/orders)
+-view/backend/index.blade.php
+-show table(order list)
+-Ordercontroller/index

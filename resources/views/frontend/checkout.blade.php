@@ -11,6 +11,7 @@
 						<thead>
 							<tr>
 								<th>No.</th>
+								<th>Photo</th>
 								<th>Item Name</th>
 								<th>Price</th>
 								<th>Qty</th>
@@ -18,6 +19,7 @@
 							</tr>
 						</thead>
 						<tbody>
+							
 							
 						</tbody>
 					</table>
@@ -27,16 +29,20 @@
 			<!-- Table -->
 			<div class="offset-md-2 col-md-8">
 				<div class="form-group">
-					<textarea class="form-control notes" placeholder="Notes"></textarea>
+					<textarea class="form-control notes" placeholder="Your Notes Here"></textarea>
 					<input type="hidden" name="" class="total">
 				</div>
 			</div>
 			<div class="offset-md-2 col-md-3 text-left">
-				<a href="" class="btn btn-primary">Continue Shopping</a>
+				<a href="{{route('homepage')}}" class="btn btn-primary">Continue Shopping</a>
 			</div>
+			{{-- <textarea class="from"></textarea> --}}
 			<div class="offset-md-2 col-md-3 text-left">
-				
-					<button class="btn btn-primary buy_now">Buy Now</button>
+				@auth
+					<button class="btn btn-primary buy_now buy_now">Checkout</button>
+					@else
+					<a href="{{route('login')}}" class="btn btn-primary float-right">Login To Checkout</a>
+				@endauth
 					
 			</div>
 		</div>
@@ -64,4 +70,7 @@
 </nav>
 
 
+@endsection
+@section('script')
+<script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection

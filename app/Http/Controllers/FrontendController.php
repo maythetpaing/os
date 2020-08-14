@@ -17,7 +17,8 @@ class FrontendController extends Controller
     }
     
 	 public function item($value=''){
-    	return view('frontend.item');
+        $items=Item::all();
+    	return view('frontend.item',compact('items'));
 	}
 	public function detail($id){
         $items=Item::find($id);
@@ -25,7 +26,8 @@ class FrontendController extends Controller
     	return view('frontend.detail',compact('items'));
 	}
 	public function checkout($value=''){
-    	return view('frontend.checkout');
+        $items=Item::all();
+    	return view('frontend.checkout',compact('items'));
 	}
 	public function login($value=''){
     	return view('frontend.login');

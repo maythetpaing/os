@@ -21,3 +21,6 @@
 	</div>
 </div>
 @endsection
+@section('script')
+<script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
+@endsection

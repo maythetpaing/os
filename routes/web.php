@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 //     // return 'hello laravel';
 // });
-
+//Backend
+// -----------
+Route::middleware('auth')->group(function (){
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 // Route::get('/', function () {
 //     return view('dashboard');
@@ -28,14 +30,23 @@ Route::resource('items','ItemController');
 Route::resource('brands','BrandController');
 Route::resource('categories','CategoryController');
 Route::resource('subcategories','SubcategoryController');
+Route::resource('orders','OrderController');	
+});
+
+
 // frontend
 Route::get('/','FrontendController@home')->name('homepage');
 
 Route::get('filteritem','FrontendController@item')->name('itempage');
 Route::get('detail/{id}','FrontendController@detail')->name('detailpage');
-Route::get('login','FrontendController@login')->name('loginpage');
+Route::get('login','FrontendController@login')->name('login');
 Route::get('register','FrontendController@register')->name('registerpage');
 Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 Route::get('profile','FrontendController@profile')->name('profilepage');
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

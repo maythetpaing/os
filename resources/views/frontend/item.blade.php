@@ -17,7 +17,7 @@
 					<p class="card-text">{{$item->description}}</p>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="btn btn-info btn-sm">Add To Cart</a>
+					<a href="#" class="btn btn-info btn-sm addtocart">Add To Cart</a>
 					<a href="{{route('detailpage',$item->id)}}" class="btn btn-primary btn-sm">Detail</a>
 				</div>
 			</div>

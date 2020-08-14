@@ -11,6 +11,7 @@ use App\Subcategory;
 
 class ItemController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
@@ -176,5 +177,6 @@ class ItemController extends Controller
         $item->delete();
         //redirect
         return redirect()->route('items.index');
+         // unlink($request->photo);
     }
 }
