@@ -38,11 +38,11 @@
 			</div>
 			{{-- <textarea class="from"></textarea> --}}
 			<div class="offset-md-2 col-md-3 text-left">
-				@auth
+				@role('customer')
 					<button class="btn btn-primary buy_now buy_now">Checkout</button>
 					@else
 					<a href="{{route('login')}}" class="btn btn-primary float-right">Login To Checkout</a>
-				@endauth
+				@endrole
 					
 			</div>
 		</div>

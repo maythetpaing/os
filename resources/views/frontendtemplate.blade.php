@@ -17,6 +17,19 @@
   <!-- Custom styles for this template -->
   <link href="{{asset('frontend/css/shop-homepage.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/fontawesome-all/css/all.min.css')}}">
+  <style>
+    body{
+     
+      background-color: white;
+      color:black;
+      
+
+    }
+    .dark-mode{
+      background-color: black;
+      color: white;
+    }
+  </style>
 
 </head>
 
@@ -52,12 +65,10 @@
             </a>
 
           </li>
+          <li>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -86,31 +97,35 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    {{-- new --}}
+                                    <a class="dropdown-item" href="{{ route('profilepage') }}">Profile
+                                       
+                                    </a>
+
+                                   
                                 </div>
                             </li>
                         @endguest
                     </ul>
                 </div>
+              </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Page Content -->
-  <div class="container">
+  
+    
+    
+     
+     
+   
 
     <div class="row">
+       <div class="col-md-1 m-5"><span> <button onclick="myFunction()" style="font-size: 10px;border-radius: 10px; color: red; background-color: black;">Dark Mode</button></span></div>
 
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('itempage')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+     @yield('sidebar')
       <!-- /.col-lg-3 -->
 
       @yield('content')
@@ -119,7 +134,7 @@
     </div>
     <!-- /.row -->
 
-  </div>
+  
   <!-- /.container -->
 
   <!-- Footer -->
@@ -133,7 +148,17 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('frontend/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script type="text/javascript">
+    function myFunction(){
+      var element=document.body;
+      element.classList.toggle("dark-mode");
+    }
+  </script>
+  
+  
+
   @yield('script')
+ 
 
 
 </body>

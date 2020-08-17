@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Brand;
 use App\Subcategory;
+// import swal from 'sweetalert';
 
 
 
@@ -175,6 +176,7 @@ class ItemController extends Controller
     {
         $item=Item::find($id);
         $item->delete();
+        // import swal from 'sweetalert';
         //redirect
         return redirect()->route('items.index');
          // unlink($request->photo);

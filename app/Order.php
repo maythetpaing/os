@@ -11,4 +11,7 @@ class Order extends Model
         public function items($value=''){
         	return $this->belongsToMany('App\Item','order_detail')->withPivot('qty')->withTimestamps();
         }
+         public function user(){
+        	return $this->belongsTo('App\User');
+        }
 }

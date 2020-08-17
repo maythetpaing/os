@@ -36,6 +36,7 @@ Frontend
 -profile page(link/retrieve)
 -item page(data binding)
 -auth(multi role)
+-if not include(center)
 ////////////////////
 Backend
 ////////////
@@ -44,3 +45,4 @@ Backend
 -view/backend/index.blade.php
 -show table(order list)
 -Ordercontroller/index
+/////////////////////////

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 //Backend
 // -----------
-Route::middleware('auth')->group(function (){
+Route::middleware('role:admin')->group(function (){
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 // Route::get('/', function () {
 //     return view('dashboard');
@@ -50,3 +50,7 @@ Route::get('profile','FrontendController@profile')->name('profilepage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::post('/getitems','FrontendController@getItems')->name('getitems');

@@ -1,5 +1,7 @@
 @extends('backendtemplate')
 @section('content')
+
+
 <div class="container-fluid">
 	<h2 class="d-inline-block">Item List(Table)</h2>
 	<a href="{{route('items.create')}}" class="btn btn-success float-right">Add Item</a>
@@ -19,23 +21,23 @@
 			<tr>
 				<td>{{$i++}}</td>
 				<td>
-				{{$item->codeno}}
-				<a href="{{route('items.show',$item->id)}}">
-				<span class="badge badge-primary badge-pill">Detail</span>
-				</a>
+					{{$item->codeno}}
+					<a href="{{route('items.show',$item->id)}}">
+						<span class="badge badge-primary badge-pill">Detail</span>
+					</a>
 
-				<a href="#" class="box" data-name="{{$item->name}}" data-photo="{{asset($item->photo)}}" data-price="{{$item->price}}" data-desc="{{$item->description}}">
-					<span class="badge badge-primary badge-pill">Modal</span>
-				</a>
-			</td>
+					<a href="#" class="box" data-name="{{$item->name}}" data-photo="{{asset($item->photo)}}" data-price="{{$item->price}}" data-desc="{{$item->description}}">
+						<span class="badge badge-primary badge-pill">Modal</span>
+					</a>
+				</td>
 				<td>{{$item->name}}</td>
 				<td>{{$item->price}}</td>
 				<td>
 					<a href="{{route('items.edit',$item->id)}}" class="btn btn-warning">Edit</a>
-					<form method="post" action="{{route('items.destroy',$item->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+					<form method="post" action="{{route('items.destroy',$item->id)}}" class="d-inline-block">
 						@csrf
 						@method('DELETE')
-						<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
+						<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger delete" onclick="sweetAlert()">
 						
 					</form>
 					
@@ -47,33 +49,33 @@
 </div>
 {{-- detail modal --}}
 <div class="modal fade" tabindex="-1" id="mymodal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-        	<div class="col-md-4">
-        		<img src="" class="img-fluid" id="photo">
-        	</div>
-        	<div class="col-md-8">
-        		Name:<strong id="name"></strong><br>
-        		Price:<strong id="price"></strong><br>
-        		Description:<strong id="desc"></strong>
-        		
-        	</div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="" class="img-fluid" id="photo">
+					</div>
+					<div class="col-md-8">
+						Name:<strong id="name"></strong><br>
+						Price:<strong id="price"></strong><br>
+						Description:<strong id="desc"></strong>
+
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 @endsection
@@ -93,7 +95,22 @@
 			$('#desc').text(desc);
 			$('#mymodal').modal('show');
 
-		})
+		});
+		//delete
+		
 	})
 </script>
 @endsection
+{{-- import swal from 'sweetalert'; --}}
+<script src="'https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+	function sweetAlert(){
+		swal("What do you want to do",{
+			dangerMode:true,
+			buttons:true,
+		})
+
+		
+	}
+	</script>
+
+
