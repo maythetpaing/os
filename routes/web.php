@@ -30,8 +30,10 @@ Route::resource('items','ItemController');
 Route::resource('brands','BrandController');
 Route::resource('categories','CategoryController');
 Route::resource('subcategories','SubcategoryController');
-Route::resource('orders','OrderController');	
+	
 });
+Route::resource('orders','OrderController');	
+
 
 
 // frontend

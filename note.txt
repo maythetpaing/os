@@ -46,3 +46,20 @@ Backend
 -show table(order list)
 -Ordercontroller/index
 /////////////////////////
+17-8-20
+-create subdomain
+-enter into subdomain using SSH ssh -p 7822 username@domain.me
+-git clone
+-enter into folder(cd)
+-cp .env.e.example .env
+-composer install
+-php artisan key:generate
+/////////////////////////
+In cpanel
+	-create a database and user
+	-Add user to database
+-edit (db) config in .env file
+-add htaccess file
+-terminal
+	-php artisan migrate
+	-php artisan db:seed
